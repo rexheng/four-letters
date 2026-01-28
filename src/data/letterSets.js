@@ -576,13 +576,25 @@ export const letterSets = {
   ]
 };
 
+// Fisher-Yates shuffle algorithm
+const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 // Helper function to get a random letter set based on difficulty
 export const getRandomLetterSet = (difficulty = 'easy') => {
   const sets = letterSets[difficulty];
   if (!sets || sets.length === 0) {
-    return letterSets.easy[0]; // Fallback
+    const fallback = letterSets.easy[0];
+    return { ...fallback, letters: shuffleArray(fallback.letters) };
   }
-  return sets[Math.floor(Math.random() * sets.length)];
+  const selectedSet = sets[Math.floor(Math.random() * sets.length)];
+  return { ...selectedSet, letters: shuffleArray(selectedSet.letters) };
 };
 
 // Get difficulty using weighted probabilities that scale with score

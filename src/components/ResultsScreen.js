@@ -1,5 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ResultsScreen.css';
+
+const SpoilerWord = ({ word }) => {
+  const [revealed, setRevealed] = useState(false);
+  
+  return (
+    <div 
+      className={`missed-word ${revealed ? 'revealed' : 'hidden'}`}
+      onClick={() => setRevealed(true)}
+    >
+      {revealed ? (
+        word.split('').map((letter, i) => (
+          <span key={i} className="letter-bubble">{letter}</span>
+        ))
+      ) : (
+        <span className="spoiler-tap">Tap to reveal</span>
+      )}
+    </div>
+  );
+};
 
 const ResultsScreen = ({ 
   score, 
@@ -19,11 +38,6 @@ const ResultsScreen = ({
 
   return (
     <div className="results-screen">
-      <button className="save-button" title="Save">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
-        </svg>
-      </button>
       <div className="results-content">
         <h1 className="game-over-title">GAME OVER</h1>
         
@@ -55,18 +69,9 @@ const ResultsScreen = ({
             <h3>Words You Could Have Made</h3>
             <div className="missed-words-list">
               {missedWords.map((word, index) => (
-                <div key={index} className="missed-word">
-                  {word.split('').map((letter, i) => (
-                    <span key={i} className="letter-bubble">{letter}</span>
-                  ))}
-                </div>
+                <SpoilerWord key={index} word={word} />
               ))}
             </div>
-            {missedWords.length > 1 && (
-              <div className="missed-words-count">
-                or {missedWords.length - 1} other {missedWords.length === 2 ? 'word' : 'words'}
-              </div>
-            )}
           </div>
         )}
 
@@ -83,10 +88,6 @@ const ResultsScreen = ({
             </svg>
             <span>MENU</span>
           </button>
-        </div>
-
-        <div className="dictionary-hint">
-          You can see all the words you've made in the Dictionary screen
         </div>
       </div>
     </div>
