@@ -4,6 +4,12 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
   const [isDrawing, setIsDrawing] = useState(false);
   const sessionPathRef = useRef([]); // Track letters added during THIS swipe session only
   const lastTouchRef = useRef(null);
+  const selectedIndicesRef = useRef(selectedIndices);
+  
+  // Keep the ref in sync with the prop
+  useEffect(() => {
+    selectedIndicesRef.current = selectedIndices;
+  }, [selectedIndices]);
 
   // Prevent default touch behaviors on the document when drawing
   useEffect(() => {
@@ -23,9 +29,10 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
 
   // Check if a letter is already selected (either from previous swipes or current session)
   const isLetterSelected = useCallback((letterIndex) => {
-    return (selectedIndices && selectedIndices.includes(letterIndex)) || 
+    const currentSelectedIndices = selectedIndicesRef.current;
+    return (currentSelectedIndices && currentSelectedIndices.includes(letterIndex)) || 
            sessionPathRef.current.includes(letterIndex);
-  }, [selectedIndices]);
+  }, []);
 
   // Find which letter element is at the given coordinates
   const findLetterAtPoint = useCallback((x, y) => {
@@ -50,9 +57,12 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
     const touch = e.touches[0];
     lastTouchRef.current = { x: touch.clientX, y: touch.clientY };
     
+    // Use ref to get fresh selectedIndices value
+    const currentSelectedIndices = selectedIndicesRef.current;
+    
     // Check if this letter is already selected - if so, remove it
-    if (selectedIndices && selectedIndices.includes(letterIndex)) {
-      const positionInWord = selectedIndices.indexOf(letterIndex);
+    if (currentSelectedIndices && currentSelectedIndices.includes(letterIndex)) {
+      const positionInWord = currentSelectedIndices.indexOf(letterIndex);
       if (onRemove && positionInWord !== -1) {
         onRemove(positionInWord);
       }
@@ -63,7 +73,7 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
     setIsDrawing(true);
     sessionPathRef.current = [letterIndex];
     onStart(letterIndex);
-  }, [onStart, onRemove, selectedIndices]);
+  }, [onStart, onRemove]);
 
   const handleTouchMove = useCallback((e) => {
     if (!isDrawing) return;
@@ -108,9 +118,12 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
   const handleMouseDown = useCallback((e, letterIndex) => {
     e.preventDefault();
     
+    // Use ref to get fresh selectedIndices value
+    const currentSelectedIndices = selectedIndicesRef.current;
+    
     // Check if this letter is already selected - if so, remove it
-    if (selectedIndices && selectedIndices.includes(letterIndex)) {
-      const positionInWord = selectedIndices.indexOf(letterIndex);
+    if (currentSelectedIndices && currentSelectedIndices.includes(letterIndex)) {
+      const positionInWord = currentSelectedIndices.indexOf(letterIndex);
       if (onRemove && positionInWord !== -1) {
         onRemove(positionInWord);
       }
@@ -121,7 +134,7 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
     setIsDrawing(true);
     sessionPathRef.current = [letterIndex];
     onStart(letterIndex);
-  }, [onStart, onRemove, selectedIndices]);
+  }, [onStart, onRemove]);
 
   const handleMouseEnter = useCallback((letterIndex) => {
     if (!isDrawing) return;
