@@ -8,7 +8,6 @@
 
 export const letterSets = {
   easy: [
-    // === CLASSIC MULTI-ANAGRAM SETS (3+ words) ===
     { letters: ['S', 'T', 'A', 'R'], possibleWords: ['STAR', 'RATS', 'ARTS', 'TARS'], difficulty: 'easy' },
     { letters: ['M', 'E', 'A', 'T'], possibleWords: ['MEAT', 'MATE', 'TEAM', 'TAME', 'META'], difficulty: 'easy' },
     { letters: ['S', 'E', 'A', 'T'], possibleWords: ['SEAT', 'EAST', 'SATE', 'EATS', 'TEAS'], difficulty: 'easy' },
@@ -34,8 +33,6 @@ export const letterSets = {
     { letters: ['T', 'I', 'D', 'E'], possibleWords: ['TIDE', 'TIED', 'DIET', 'EDIT'], difficulty: 'easy' },
     { letters: ['T', 'H', 'I', 'S'], possibleWords: ['THIS', 'HITS', 'HIST'], difficulty: 'easy' },
     { letters: ['T', 'H', 'U', 'S'], possibleWords: ['THUS', 'SHUT', 'HUTS', 'TUSH'], difficulty: 'easy' },
-    
-    // === STRONG 3-ANAGRAM SETS ===
     { letters: ['C', 'A', 'R', 'E'], possibleWords: ['CARE', 'RACE', 'ACRE'], difficulty: 'easy' },
     { letters: ['T', 'E', 'A', 'R'], possibleWords: ['TEAR', 'RATE', 'TARE'], difficulty: 'easy' },
     { letters: ['T', 'A', 'L', 'E'], possibleWords: ['TALE', 'LATE', 'TEAL'], difficulty: 'easy' },
@@ -72,8 +69,6 @@ export const letterSets = {
     { letters: ['E', 'A', 'S', 'Y'], possibleWords: ['EASY', 'AYES', 'YEAS'], difficulty: 'easy' },
     { letters: ['E', 'L', 'S', 'E'], possibleWords: ['ELSE', 'EELS', 'LEES'], difficulty: 'easy' },
     { letters: ['P', 'O', 'S', 'E'], possibleWords: ['POSE', 'EPOS', 'PESO', 'OPES'], difficulty: 'easy' },
-    
-    // === 2-ANAGRAM SETS WITH COMMON WORDS ===
     { letters: ['O', 'P', 'E', 'N'], possibleWords: ['OPEN', 'PEON', 'NOPE'], difficulty: 'easy' },
     { letters: ['O', 'V', 'E', 'R'], possibleWords: ['OVER', 'ROVE'], difficulty: 'easy' },
     { letters: ['E', 'V', 'E', 'R'], possibleWords: ['EVER', 'VEER'], difficulty: 'easy' },
@@ -122,7 +117,6 @@ export const letterSets = {
   ],
   
   medium: [
-    // === 2 ANAGRAM SETS - Common word pairs ===
     { letters: ['B', 'E', 'A', 'R'], possibleWords: ['BEAR', 'BARE'], difficulty: 'medium' },
     { letters: ['H', 'E', 'A', 'T'], possibleWords: ['HEAT', 'HATE'], difficulty: 'medium' },
     { letters: ['L', 'O', 'V', 'E'], possibleWords: ['LOVE', 'VOLE'], difficulty: 'medium' },
@@ -157,8 +151,6 @@ export const letterSets = {
     { letters: ['G', 'H', 'O', 'S'], possibleWords: ['GOSH', 'HOGS'], difficulty: 'medium' },
     { letters: ['S', 'O', 'U', 'P'], possibleWords: ['SOUP', 'OPUS'], difficulty: 'medium' },
     { letters: ['L', 'E', 'E', 'R'], possibleWords: ['LEER', 'REEL'], difficulty: 'medium' },
-    
-    // === COMMON SINGLE-WORD MEDIUM ===
     { letters: ['T', 'H', 'E', 'M'], possibleWords: ['THEM'], difficulty: 'medium' },
     { letters: ['T', 'H', 'E', 'N'], possibleWords: ['THEN'], difficulty: 'medium' },
     { letters: ['C', 'O', 'U', 'P'], possibleWords: ['COUP'], difficulty: 'medium' },
@@ -170,24 +162,24 @@ export const letterSets = {
     { letters: ['H', 'A', 'U', 'L'], possibleWords: ['HAUL'], difficulty: 'medium' },
     { letters: ['M', 'A', 'U', 'L'], possibleWords: ['MAUL'], difficulty: 'medium' },
     { letters: ['A', 'N', 'T', 'I'], possibleWords: ['ANTI'], difficulty: 'medium' },
-    { letters: ['A', 'L', 'S', 'O'], possibleWords: ['ALSO'], difficulty: 'medium' },
+    { letters: ['A', 'L', 'S', 'O'], possibleWords: ['ALSO','SOLA'], difficulty: 'medium' },
     { letters: ['A', 'W', 'A', 'Y'], possibleWords: ['AWAY'], difficulty: 'medium' },
     { letters: ['A', 'C', 'I', 'D'], possibleWords: ['ACID'], difficulty: 'medium' },
     { letters: ['I', 'N', 'T', 'O'], possibleWords: ['INTO'], difficulty: 'medium' },
-    { letters: ['I', 'R', 'O', 'N'], possibleWords: ['IRON',"NOIR"], difficulty: 'medium' },
+    { letters: ['I', 'R', 'O', 'N'], possibleWords: ['IRON',"NOIR","NORI"], difficulty: 'medium' },
     { letters: ['U', 'N', 'D', 'O'], possibleWords: ['UNDO'], difficulty: 'medium' },
     { letters: ['U', 'P', 'O', 'N'], possibleWords: ['UPON'], difficulty: 'medium' },
     { letters: ['W', 'I', 'D', 'E'], possibleWords: ['WIDE'], difficulty: 'medium' },
     { letters: ['W', 'I', 'F', 'E'], possibleWords: ['WIFE'], difficulty: 'medium' },
     { letters: ['W', 'I', 'S', 'E'], possibleWords: ['WISE'], difficulty: 'medium' },
-    { letters: ['R', 'E', 'S', 'T'], possibleWords: ['REST'], difficulty: 'medium' },
+    { letters: ['R', 'E', 'S', 'T'], possibleWords: ['REST','RETS','ERST'], difficulty: 'medium' },
     { letters: ['G', 'R', 'O', 'W'], possibleWords: ['GROW'], difficulty: 'medium' },
     { letters: ['H', 'A', 'Z', 'E'], possibleWords: ['HAZE'], difficulty: 'medium' },
     { letters: ['M', 'A', 'Z', 'E'], possibleWords: ['MAZE'], difficulty: 'medium' },
     { letters: ['G', 'A', 'Z', 'E'], possibleWords: ['GAZE'], difficulty: 'medium' },
-    { letters: ['T', 'R', 'E', 'E'], possibleWords: ['TREE'], difficulty: 'medium' },
+    { letters: ['T', 'R', 'E', 'E'], possibleWords: ['TREE','RETE'], difficulty: 'medium' },
     { letters: ['B', 'E', 'E', 'R'], possibleWords: ['BEER'], difficulty: 'medium' },
-    { letters: ['D', 'E', 'E', 'R'], possibleWords: ['DEER'], difficulty: 'medium' },
+    { letters: ['D', 'E', 'E', 'R'], possibleWords: ['DEER','ERED','REED'], difficulty: 'medium' },
     { letters: ['B', 'E', 'E', 'F'], possibleWords: ['BEEF'], difficulty: 'medium' },
     { letters: ['F', 'E', 'E', 'L'], possibleWords: ['FEEL'], difficulty: 'medium' },
     { letters: ['H', 'E', 'E', 'L'], possibleWords: ['HEEL'], difficulty: 'medium' },
@@ -195,11 +187,11 @@ export const letterSets = {
     { letters: ['S', 'E', 'E', 'D'], possibleWords: ['SEED'], difficulty: 'medium' },
     { letters: ['F', 'E', 'E', 'D'], possibleWords: ['FEED'], difficulty: 'medium' },
     { letters: ['N', 'E', 'E', 'D'], possibleWords: ['NEED'], difficulty: 'medium' },
-    { letters: ['D', 'E', 'E', 'P'], possibleWords: ['DEEP'], difficulty: 'medium' },
+    { letters: ['D', 'E', 'E', 'P'], possibleWords: ['DEEP','PEED'], difficulty: 'medium' },
     { letters: ['W', 'O', 'R', 'K'], possibleWords: ['WORK'], difficulty: 'medium' },
-    { letters: ['W', 'O', 'R', 'D'], possibleWords: ['WORD'], difficulty: 'medium' },
+    { letters: ['W', 'O', 'R', 'D'], possibleWords: ['WORD','DROW'], difficulty: 'medium' },
     { letters: ['H', 'O', 'M', 'E'], possibleWords: ['HOME'], difficulty: 'medium' },
-    { letters: ['K', 'I', 'N', 'D'], possibleWords: ['KIND'], difficulty: 'medium' },
+    { letters: ['K', 'I', 'N', 'D'], possibleWords: ['KIND','DINK'], difficulty: 'medium' },
     { letters: ['M', 'I', 'N', 'D'], possibleWords: ['MIND'], difficulty: 'medium' },
     { letters: ['W', 'I', 'N', 'D'], possibleWords: ['WIND'], difficulty: 'medium' },
     { letters: ['F', 'I', 'N', 'D'], possibleWords: ['FIND'], difficulty: 'medium' },
@@ -208,15 +200,15 @@ export const letterSets = {
     { letters: ['H', 'A', 'N', 'D'], possibleWords: ['HAND'], difficulty: 'medium' },
     { letters: ['B', 'A', 'N', 'D'], possibleWords: ['BAND'], difficulty: 'medium' },
     { letters: ['L', 'A', 'N', 'D'], possibleWords: ['LAND'], difficulty: 'medium' },
-    { letters: ['B', 'O', 'A', 'T'], possibleWords: ['BOAT'], difficulty: 'medium' },
+    { letters: ['B', 'O', 'A', 'T'], possibleWords: ['BOAT','BOTA'], difficulty: 'medium' },
     { letters: ['R', 'O', 'A', 'D'], possibleWords: ['ROAD'], difficulty: 'medium' },
     { letters: ['L', 'O', 'A', 'D'], possibleWords: ['LOAD'], difficulty: 'medium' },
     { letters: ['G', 'I', 'R', 'L'], possibleWords: ['GIRL'], difficulty: 'medium' },
-    { letters: ['P', 'L', 'A', 'Y'], possibleWords: ['PLAY'], difficulty: 'medium' },
+    { letters: ['P', 'L', 'A', 'Y'], possibleWords: ['PLAY','PALY'], difficulty: 'medium' },
     { letters: ['H', 'E', 'L', 'P'], possibleWords: ['HELP'], difficulty: 'medium' },
     { letters: ['T', 'R', 'U', 'E'], possibleWords: ['TRUE'], difficulty: 'medium' },
     { letters: ['C', 'U', 'R', 'E'], possibleWords: ['CURE'], difficulty: 'medium' },
-    { letters: ['P', 'U', 'R', 'E'], possibleWords: ['PURE'], difficulty: 'medium' },
+    { letters: ['P', 'U', 'R', 'E'], possibleWords: ['PURE','PUER'], difficulty: 'medium' },
     { letters: ['D', 'A', 'R', 'K'], possibleWords: ['DARK'], difficulty: 'medium' },
     { letters: ['M', 'A', 'R', 'K'], possibleWords: ['MARK'], difficulty: 'medium' },
     { letters: ['P', 'A', 'R', 'K'], possibleWords: ['PARK'], difficulty: 'medium' },
@@ -224,24 +216,24 @@ export const letterSets = {
     { letters: ['T', 'A', 'L', 'K'], possibleWords: ['TALK'], difficulty: 'medium' },
     { letters: ['B', 'A', 'C', 'K'], possibleWords: ['BACK'], difficulty: 'medium' },
     { letters: ['P', 'A', 'C', 'K'], possibleWords: ['PACK'], difficulty: 'medium' },
-    { letters: ['L', 'A', 'C', 'K'], possibleWords: ['LACK'], difficulty: 'medium' },
-    { letters: ['R', 'A', 'C', 'K'], possibleWords: ['RACK'], difficulty: 'medium' },
+    { letters: ['L', 'A', 'C', 'K'], possibleWords: ['LACK','CALK'], difficulty: 'medium' },
+    { letters: ['R', 'A', 'C', 'K'], possibleWords: ['RACK','CARK'], difficulty: 'medium' },
     { letters: ['N', 'E', 'C', 'K'], possibleWords: ['NECK'], difficulty: 'medium' },
     { letters: ['D', 'E', 'C', 'K'], possibleWords: ['DECK'], difficulty: 'medium' },
     { letters: ['C', 'H', 'E', 'F'], possibleWords: ['CHEF'], difficulty: 'medium' },
-    { letters: ['S', 'E', 'L', 'F'], possibleWords: ['SELF'], difficulty: 'medium' },
+    { letters: ['S', 'E', 'L', 'F'], possibleWords: ['SELF','ELFS'], difficulty: 'medium' },
     { letters: ['G', 'U', 'L', 'F'], possibleWords: ['GULF'], difficulty: 'medium' },
     { letters: ['H', 'E', 'L', 'D'], possibleWords: ['HELD'], difficulty: 'medium' },
-    { letters: ['W', 'E', 'L', 'D'], possibleWords: ['WELD'], difficulty: 'medium' },
+    { letters: ['W', 'E', 'L', 'D'], possibleWords: ['WELD','LEWD'], difficulty: 'medium' },
     { letters: ['M', 'E', 'L', 'D'], possibleWords: ['MELD'], difficulty: 'medium' },
     { letters: ['P', 'O', 'U', 'R'], possibleWords: ['POUR'], difficulty: 'medium' },
     { letters: ['F', 'O', 'U', 'R'], possibleWords: ['FOUR'], difficulty: 'medium' },
     { letters: ['H', 'O', 'U', 'R'], possibleWords: ['HOUR'], difficulty: 'medium' },
     { letters: ['S', 'O', 'U', 'L'], possibleWords: ['SOUL'], difficulty: 'medium' },
     { letters: ['F', 'O', 'U', 'L'], possibleWords: ['FOUL'], difficulty: 'medium' },
-    { letters: ['L', 'O', 'U', 'D'], possibleWords: ['LOUD'], difficulty: 'medium' },
+    { letters: ['L', 'O', 'U', 'D'], possibleWords: ['LOUD','LUDO','OULD'], difficulty: 'medium' },
     { letters: ['J', 'O', 'I', 'N'], possibleWords: ['JOIN'], difficulty: 'medium' },
-    { letters: ['C', 'O', 'I', 'L'], possibleWords: ['COIL'], difficulty: 'medium' },
+    { letters: ['C', 'O', 'I', 'L'], possibleWords: ['COIL','LOCI'], difficulty: 'medium' },
     { letters: ['B', 'O', 'I', 'L'], possibleWords: ['BOIL'], difficulty: 'medium' },
     { letters: ['O', 'N', 'L', 'Y'], possibleWords: ['ONLY'], difficulty: 'medium' },
     { letters: ['E', 'V', 'E', 'N'], possibleWords: ['EVEN'], difficulty: 'medium' },
@@ -254,26 +246,25 @@ export const letterSets = {
     { letters: ['D', 'U', 'C', 'K'], possibleWords: ['DUCK'], difficulty: 'medium' },
     { letters: ['B', 'U', 'C', 'K'], possibleWords: ['BUCK'], difficulty: 'medium' },
     { letters: ['P', 'I', 'C', 'K'], possibleWords: ['PICK'], difficulty: 'medium' },
-    { letters: ['S', 'I', 'C', 'K'], possibleWords: ['SICK'], difficulty: 'medium' },
+    { letters: ['S', 'I', 'C', 'K'], possibleWords: ['SICK','ICKS'], difficulty: 'medium' },
     { letters: ['T', 'I', 'C', 'K'], possibleWords: ['TICK'], difficulty: 'medium' },
     { letters: ['L', 'O', 'C', 'K'], possibleWords: ['LOCK'], difficulty: 'medium' },
     { letters: ['S', 'O', 'C', 'K'], possibleWords: ['SOCK'], difficulty: 'medium' },
     { letters: ['D', 'O', 'C', 'K'], possibleWords: ['DOCK'], difficulty: 'medium' },
     { letters: ['P', 'A', 'T', 'H'], possibleWords: ['PATH'], difficulty: 'medium' },
     { letters: ['M', 'A', 'T', 'H'], possibleWords: ['MATH'], difficulty: 'medium' },
-    { letters: ['T', 'H', 'A', 'T'], possibleWords: ['THAT'], difficulty: 'medium' },
+    { letters: ['T', 'H', 'A', 'T'], possibleWords: ['THAT','TATH'], difficulty: 'medium' },
     { letters: ['M', 'I', 'S', 'O'], possibleWords: ['MISO'], difficulty: 'medium' }
   ],
   
   hard: [
-    // === LESS COMMON SINGLE WORDS - Requires thought ===
     { letters: ['C', 'R', 'A', 'W'], possibleWords: ['CRAW'], difficulty: 'hard' },
     { letters: ['D', 'U', 'S', 'K'], possibleWords: ['DUSK'], difficulty: 'hard' },
     { letters: ['B', 'I', 'N', 'D'], possibleWords: ['BIND'], difficulty: 'hard' },
-    { letters: ['H', 'I', 'N', 'T'], possibleWords: ['HINT'], difficulty: 'hard' },
+    { letters: ['H', 'I', 'N', 'T'], possibleWords: ['HINT', 'THIN'], difficulty: 'hard' },
     { letters: ['M', 'I', 'N', 'T'], possibleWords: ['MINT'], difficulty: 'hard' },
     { letters: ['P', 'I', 'N', 'T'], possibleWords: ['PINT'], difficulty: 'hard' },
-    { letters: ['L', 'I', 'N', 'K'], possibleWords: ['LINK'], difficulty: 'hard' },
+    { letters: ['L', 'I', 'N', 'K'], possibleWords: ['LINK','KILN'], difficulty: 'hard' },
     { letters: ['P', 'I', 'N', 'K'], possibleWords: ['PINK'], difficulty: 'hard' },
     { letters: ['R', 'I', 'N', 'K'], possibleWords: ['RINK'], difficulty: 'hard' },
     { letters: ['W', 'I', 'N', 'K'], possibleWords: ['WINK'], difficulty: 'hard' },
@@ -286,32 +277,29 @@ export const letterSets = {
     { letters: ['J', 'O', 'L', 'T'], possibleWords: ['JOLT'], difficulty: 'hard' },
     { letters: ['M', 'O', 'L', 'T'], possibleWords: ['MOLT'], difficulty: 'hard' },
     { letters: ['V', 'O', 'L', 'T'], possibleWords: ['VOLT'], difficulty: 'hard' },
-    { letters: ['B', 'E', 'L', 'T'], possibleWords: ['BELT'], difficulty: 'hard' },
+    { letters: ['B', 'E', 'L', 'T'], possibleWords: ['BELT','BLET'], difficulty: 'hard' },
     { letters: ['M', 'E', 'L', 'T'], possibleWords: ['MELT'], difficulty: 'hard' },
     { letters: ['Y', 'E', 'L', 'P'], possibleWords: ['YELP'], difficulty: 'hard' },
-    { letters: ['G', 'U', 'L', 'P'], possibleWords: ['GULP'], difficulty: 'hard' },
+    { letters: ['G', 'U', 'L', 'P'], possibleWords: ['GULP', 'PLUG'], difficulty: 'hard' },
     { letters: ['P', 'U', 'L', 'P'], possibleWords: ['PULP'], difficulty: 'hard' },
-    { letters: ['C', 'A', 'L', 'M'], possibleWords: ['CALM'], difficulty: 'hard' },
-    { letters: ['B', 'A', 'L', 'M'], possibleWords: ['BALM'], difficulty: 'hard' },
-    { letters: ['P', 'A', 'L', 'M'], possibleWords: ['PALM'], difficulty: 'hard' },
+    { letters: ['C', 'A', 'L', 'M'], possibleWords: ['CALM', 'CLAM'], difficulty: 'hard' },
+    { letters: ['B', 'A', 'L', 'M'], possibleWords: ['BALM', 'LAMB', 'BLAM'], difficulty: 'hard' },
+    { letters: ['P', 'A', 'L', 'M'], possibleWords: ['PALM', 'LAMP'], difficulty: 'hard' },
     { letters: ['H', 'A', 'R', 'M'], possibleWords: ['HARM'], difficulty: 'hard' },
     { letters: ['F', 'A', 'R', 'M'], possibleWords: ['FARM'], difficulty: 'hard' },
     { letters: ['W', 'A', 'R', 'M'], possibleWords: ['WARM'], difficulty: 'hard' },
-    { letters: ['N', 'O', 'R', 'M'], possibleWords: ['NORM'], difficulty: 'hard' },
+    { letters: ['N', 'O', 'R', 'M'], possibleWords: ['NORM','MORN'], difficulty: 'hard' },
     { letters: ['W', 'O', 'R', 'M'], possibleWords: ['WORM'], difficulty: 'hard' },
     { letters: ['D', 'A', 'M', 'P'], possibleWords: ['DAMP'], difficulty: 'hard' },
     { letters: ['C', 'A', 'M', 'P'], possibleWords: ['CAMP'], difficulty: 'hard' },
-    { letters: ['L', 'A', 'M', 'P'], possibleWords: ['LAMP'], difficulty: 'hard' },
     { letters: ['R', 'A', 'M', 'P'], possibleWords: ['RAMP'], difficulty: 'hard' },
     { letters: ['G', 'I', 'F', 'T'], possibleWords: ['GIFT'], difficulty: 'hard' },
-    { letters: ['L', 'I', 'F', 'T'], possibleWords: ['LIFT'], difficulty: 'hard' },
+    { letters: ['L', 'I', 'F', 'T'], possibleWords: ['LIFT', 'FLIT'], difficulty: 'hard' },
     { letters: ['R', 'I', 'F', 'T'], possibleWords: ['RIFT'], difficulty: 'hard' },
     { letters: ['S', 'O', 'F', 'T'], possibleWords: ['SOFT'], difficulty: 'hard' },
     { letters: ['L', 'O', 'F', 'T'], possibleWords: ['LOFT'], difficulty: 'hard' },
-    { letters: ['B', 'O', 'L', 'T'], possibleWords: ['BOLT'], difficulty: 'hard' },
+    { letters: ['B', 'O', 'L', 'T'], possibleWords: ['BOLT', 'BLOT'], difficulty: 'hard' },
     { letters: ['C', 'O', 'R', 'N'], possibleWords: ['CORN'], difficulty: 'hard' },
-    
-    // Double letter words
     { letters: ['T', 'E', 'L', 'L'], possibleWords: ['TELL'], difficulty: 'hard' },
     { letters: ['W', 'E', 'L', 'L'], possibleWords: ['WELL'], difficulty: 'hard' },
     { letters: ['F', 'E', 'L', 'L'], possibleWords: ['FELL'], difficulty: 'hard' },
@@ -333,9 +321,7 @@ export const letterSets = {
     { letters: ['B', 'U', 'L', 'L'], possibleWords: ['BULL'], difficulty: 'hard' },
     { letters: ['D', 'U', 'L', 'L'], possibleWords: ['DULL'], difficulty: 'hard' },
     { letters: ['H', 'U', 'L', 'L'], possibleWords: ['HULL'], difficulty: 'hard' },
-    { letters: ['T', 'E', 'S', 'T'], possibleWords: ['TEST'], difficulty: 'hard' },
-    
-    // CH/WH/TH combinations
+    { letters: ['T', 'E', 'S', 'T'], possibleWords: ['TEST', 'STET', 'SETT', 'TETS'], difficulty: 'hard' },
     { letters: ['W', 'H', 'I', 'P'], possibleWords: ['WHIP'], difficulty: 'hard' },
     { letters: ['C', 'H', 'O', 'P'], possibleWords: ['CHOP'], difficulty: 'hard' },
     { letters: ['C', 'H', 'I', 'P'], possibleWords: ['CHIP'], difficulty: 'hard' },
@@ -344,59 +330,48 @@ export const letterSets = {
     { letters: ['T', 'W', 'I', 'N'], possibleWords: ['TWIN'], difficulty: 'hard' },
     { letters: ['S', 'W', 'I', 'M'], possibleWords: ['SWIM'], difficulty: 'hard' },
     { letters: ['G', 'L', 'O', 'W'], possibleWords: ['GLOW'], difficulty: 'hard' },
-    { letters: ['C', 'L', 'U', 'E'], possibleWords: ['CLUE'], difficulty: 'hard' },
+    { letters: ['C', 'L', 'U', 'E'], possibleWords: ['CLUE', 'LUCE'], difficulty: 'hard' },
     { letters: ['G', 'L', 'U', 'E'], possibleWords: ['GLUE'], difficulty: 'hard' },
-    { letters: ['T', 'U', 'B', 'E'], possibleWords: ['TUBE'], difficulty: 'hard' },
+    { letters: ['T', 'U', 'B', 'E'], possibleWords: ['TUBE', 'BUTE'], difficulty: 'hard' },
     { letters: ['C', 'U', 'B', 'E'], possibleWords: ['CUBE'], difficulty: 'hard' },
     { letters: ['F', 'U', 'S', 'E'], possibleWords: ['FUSE'], difficulty: 'hard' },
-    
-    // Multi-anagram sets that are harder
     { letters: ['S', 'I', 'N', 'K'], possibleWords: ['SINK', 'INKS', 'KINS'], difficulty: 'hard' },
     { letters: ['B', 'U', 'S', 'T'], possibleWords: ['BUST', 'BUTS', 'TUBS', 'STUB'], difficulty: 'hard' },
     { letters: ['G', 'U', 'S', 'T'], possibleWords: ['GUST', 'GUTS', 'TUGS'], difficulty: 'hard' },
     { letters: ['J', 'U', 'S', 'T'], possibleWords: ['JUST', 'JUTS'], difficulty: 'hard' },
-    { letters: ['M', 'U', 'S', 'T'], possibleWords: ['MUST', 'SMUT'], difficulty: 'hard' },
+    { letters: ['M', 'U', 'S', 'T'], possibleWords: ['MUST', 'SMUT', 'TUMS'], difficulty: 'hard' },
     { letters: ['R', 'U', 'S', 'T'], possibleWords: ['RUST', 'RUTS'], difficulty: 'hard' },
     { letters: ['S', 'A', 'N', 'D'], possibleWords: ['SAND', 'ANDS'], difficulty: 'hard' },
     { letters: ['S', 'E', 'L', 'L'], possibleWords: ['SELL', 'ELLS'], difficulty: 'hard' },
-    { letters: ['S', 'W', 'A', 'N'], possibleWords: ['SWAN', 'WANS', 'AWNS'], difficulty: 'hard' },
+    { letters: ['S', 'W', 'A', 'N'], possibleWords: ['SWAN', 'WANS', 'AWNS', 'SNAW'], difficulty: 'hard' },
     { letters: ['H', 'U', 'G', 'E'], possibleWords: ['HUGE'], difficulty: 'hard' },
     { letters: ['J', 'U', 'M', 'P'], possibleWords: ['JUMP'], difficulty: 'hard' },
-    
-    // Less obvious words with common letters
     { letters: ['W', 'E', 'I', 'N'], possibleWords: ['WINE'], difficulty: 'hard' },
     { letters: ['G', 'A', 'W', 'K'], possibleWords: ['GAWK'], difficulty: 'hard' },
     { letters: ['H', 'A', 'W', 'K'], possibleWords: ['HAWK'], difficulty: 'hard' },
-    { letters: ['Y', 'A', 'W', 'N'], possibleWords: ['YAWN'], difficulty: 'hard' },
+    { letters: ['Y', 'A', 'W', 'N'], possibleWords: ['YAWN', 'WANY', 'AWNY'], difficulty: 'hard' },
     { letters: ['F', 'A', 'W', 'N'], possibleWords: ['FAWN'], difficulty: 'hard' },
     { letters: ['P', 'A', 'W', 'N'], possibleWords: ['PAWN'], difficulty: 'hard' },
-    { letters: ['D', 'A', 'W', 'N'], possibleWords: ['DAWN'], difficulty: 'hard' },
+    { letters: ['D', 'A', 'W', 'N'], possibleWords: ['DAWN', 'WAND'], difficulty: 'hard' },
     { letters: ['L', 'A', 'W', 'N'], possibleWords: ['LAWN'], difficulty: 'hard' },
     { letters: ['C', 'L', 'A', 'W'], possibleWords: ['CLAW'], difficulty: 'hard' },
     { letters: ['F', 'L', 'A', 'W'], possibleWords: ['FLAW'], difficulty: 'hard' },
-    { letters: ['S', 'L', 'A', 'W'], possibleWords: ['SLAW'], difficulty: 'hard' },
-    { letters: ['T', 'H', 'A', 'W'], possibleWords: ['THAW'], difficulty: 'hard' },
-    
-    // GH words
+    { letters: ['S', 'L', 'A', 'W'], possibleWords: ['SLAW', 'LAWS', 'AWLS'], difficulty: 'hard' },
     { letters: ['S', 'I', 'G', 'H'], possibleWords: ['SIGH'], difficulty: 'hard' },
     { letters: ['H', 'I', 'G', 'H'], possibleWords: ['HIGH'], difficulty: 'hard' },
     { letters: ['N', 'I', 'G', 'H'], possibleWords: ['NIGH'], difficulty: 'hard' },
-    
-    // Words starting with unusual consonant clusters
     { letters: ['S', 'K', 'I', 'T'], possibleWords: ['SKIT', 'KITS'], difficulty: 'hard' },
     { letters: ['S', 'K', 'I', 'M'], possibleWords: ['SKIM'], difficulty: 'hard' },
     { letters: ['S', 'K', 'I', 'P'], possibleWords: ['SKIP', 'KIPS'], difficulty: 'hard' },
     { letters: ['S', 'P', 'U', 'N'], possibleWords: ['SPUN', 'PUNS'], difficulty: 'hard' },
     { letters: ['S', 'T', 'U', 'N'], possibleWords: ['STUN', 'NUTS', 'TUNS'], difficulty: 'hard' },
-    { letters: ['S', 'P', 'U', 'R'], possibleWords: ['SPUR'], difficulty: 'hard' },
+    { letters: ['S', 'P', 'U', 'R'], possibleWords: ['SPUR', 'PURS'], difficulty: 'hard' },
     { letters: ['S', 'L', 'U', 'R'], possibleWords: ['SLUR'], difficulty: 'hard' },
     { letters: ['S', 'L', 'U', 'M'], possibleWords: ['SLUM'], difficulty: 'hard' },
     { letters: ['S', 'L', 'U', 'G'], possibleWords: ['SLUG', 'LUGS'], difficulty: 'hard' },
     { letters: ['S', 'M', 'U', 'G'], possibleWords: ['SMUG', 'MUGS', 'GUMS'], difficulty: 'hard' },
     { letters: ['S', 'N', 'U', 'G'], possibleWords: ['SNUG', 'GUNS', 'GNUS','SUNG'], difficulty: 'hard' },
     { letters: ['S', 'N', 'U', 'B'], possibleWords: ['SNUB', 'BUNS', 'NUBS'], difficulty: 'hard' },
-    
-    // Unusual but valid words
     { letters: ['G', 'R', 'I', 'M'], possibleWords: ['GRIM'], difficulty: 'hard' },
     { letters: ['P', 'R', 'I', 'M'], possibleWords: ['PRIM'], difficulty: 'hard' },
     { letters: ['T', 'R', 'I', 'M'], possibleWords: ['TRIM'], difficulty: 'hard' },
@@ -405,22 +380,18 @@ export const letterSets = {
     { letters: ['T', 'R', 'I', 'P'], possibleWords: ['TRIP'], difficulty: 'hard' },
     { letters: ['D', 'R', 'I', 'P'], possibleWords: ['DRIP'], difficulty: 'hard' },
     { letters: ['C', 'R', 'I', 'B'], possibleWords: ['CRIB'], difficulty: 'hard' },
-    { letters: ['G', 'R', 'U', 'B'], possibleWords: ['GRUB'], difficulty: 'hard' },
-    
-    // Words with tricky vowel placement
+    { letters: ['G', 'R', 'U', 'B'], possibleWords: ['GRUB', 'BURG'], difficulty: 'hard' },
     { letters: ['O', 'A', 'T', 'H'], possibleWords: ['OATH'], difficulty: 'hard' },
     { letters: ['O', 'V', 'A', 'L'], possibleWords: ['OVAL'], difficulty: 'hard' },
     { letters: ['O', 'R', 'A', 'L'], possibleWords: ['ORAL'], difficulty: 'hard' },
     { letters: ['O', 'M', 'E', 'N'], possibleWords: ['OMEN'], difficulty: 'hard' },
     { letters: ['O', 'W', 'E', 'D'], possibleWords: ['OWED'], difficulty: 'hard' },
-    { letters: ['A', 'I', 'L', 'S'], possibleWords: ['AILS', 'SAIL'], difficulty: 'hard' },
+    { letters: ['A', 'I', 'L', 'S'], possibleWords: ['AILS', 'SAIL', 'LIAS'], difficulty: 'hard' },
     { letters: ['A', 'V', 'I', 'D'], possibleWords: ['AVID','DIVA'], difficulty: 'hard' },
     { letters: ['A', 'R', 'I', 'D'], possibleWords: ['ARID', 'RAID'], difficulty: 'hard' },
     { letters: ['G', 'O', 'U', 'T'], possibleWords: ['GOUT'], difficulty: 'hard' },
     { letters: ['L', 'O', 'U', 'T'], possibleWords: ['LOUT'], difficulty: 'hard' },
-    { letters: ['G', 'E', 'L', 'D'], possibleWords: ['GELD'], difficulty: 'hard' },
-    
-    // Additional hard words
+    { letters: ['G', 'E', 'L', 'D'], possibleWords: ['GELD', 'GLED'], difficulty: 'hard' },
     { letters: ['G', 'O', 'R', 'Y'], possibleWords: ['GORY', 'ORGY', 'GYRO'], difficulty: 'hard' },
     { letters: ['R', 'O', 'P', 'Y'], possibleWords: ['ROPY', 'PYRO'], difficulty: 'hard' },
     { letters: ['B', 'A', 'S', 'K'], possibleWords: ['BASK'], difficulty: 'hard' },
@@ -440,7 +411,8 @@ export const letterSets = {
   ],
   
   expert: [
-    // === RARE LETTER WORDS (Q, X, Z, J) ===
+    { letters: ['O', 'O', 'Z', 'E'], possibleWords: ['OOZE'], difficulty: 'expert' },    
+    { letters: ['T', 'A', 'L', 'C'], possibleWords: ['TALC'], difficulty: 'expert' },    
     { letters: ['Q', 'U', 'I', 'Z'], possibleWords: ['QUIZ'], difficulty: 'expert' },
     { letters: ['Z', 'E', 'S', 'T'], possibleWords: ['ZEST'], difficulty: 'expert' },
     { letters: ['J', 'A', 'Z', 'Z'], possibleWords: ['JAZZ'], difficulty: 'expert' },
@@ -473,41 +445,32 @@ export const letterSets = {
     { letters: ['C', 'O', 'Z', 'Y'], possibleWords: ['COZY'], difficulty: 'expert' },
     { letters: ['D', 'O', 'Z', 'Y'], possibleWords: ['DOZY'], difficulty: 'expert' },
     { letters: ['Z', 'A', 'N', 'Y'], possibleWords: ['ZANY'], difficulty: 'expert' },
-    
-    // === UNCOMMON WORDS WITH COMMON LETTERS ===
     { letters: ['B', 'R', 'I', 'E'], possibleWords: ['BRIE'], difficulty: 'expert' },
     { letters: ['A', 'G', 'O', 'G'], possibleWords: ['AGOG'], difficulty: 'expert' },
     { letters: ['A', 'J', 'A', 'R'], possibleWords: ['AJAR'], difficulty: 'expert' },
     { letters: ['T', 'W', 'E', 'E'], possibleWords: ['TWEE'], difficulty: 'expert' },
-    { letters: ['A', 'W', 'R', 'Y'], possibleWords: ['AWRY'], difficulty: 'expert' },
+    { letters: ['A', 'W', 'R', 'Y'], possibleWords: ['AWRY','WARY'], difficulty: 'expert' },
     { letters: ['E', 'W', 'E', 'R'], possibleWords: ['EWER'], difficulty: 'expert' },
-    { letters: ['O', 'G', 'R', 'E'], possibleWords: ['OGRE', 'GORE', 'ERGO'], difficulty: 'expert' },
+    { letters: ['O', 'G', 'R', 'E'], possibleWords: ['OGRE', 'GORE', 'ERGO', 'GOER'], difficulty: 'expert' },
     { letters: ['O', 'N', 'C', 'E'], possibleWords: ['ONCE', 'CONE'], difficulty: 'expert' },
     { letters: ['A', 'C', 'M', 'E'], possibleWords: ['ACME', 'CAME', 'MACE'], difficulty: 'expert' },
-    
-    // Silent letter words
     { letters: ['M', 'Y', 'T', 'H'], possibleWords: ['MYTH'], difficulty: 'expert' },
     { letters: ['H', 'Y', 'M', 'N'], possibleWords: ['HYMN'], difficulty: 'expert' },
     { letters: ['W', 'R', 'E', 'N'], possibleWords: ['WREN'], difficulty: 'expert' },
-    { letters: ['K', 'N', 'O', 'T'], possibleWords: ['KNOT'], difficulty: 'expert' },
-    { letters: ['K', 'N', 'I', 'T'], possibleWords: ['KNIT'], difficulty: 'expert' },
-    { letters: ['G', 'N', 'A', 'W'], possibleWords: ['GNAW'], difficulty: 'expert' },
-    { letters: ['G', 'N', 'A', 'T'], possibleWords: ['GNAT'], difficulty: 'expert' },
+    { letters: ['K', 'N', 'O', 'T'], possibleWords: ['KNOT', 'TONK'], difficulty: 'expert' },
+    { letters: ['K', 'N', 'I', 'T'], possibleWords: ['KNIT', 'TINK'], difficulty: 'expert' },
+    { letters: ['G', 'N', 'A', 'W'], possibleWords: ['GNAW', 'WANG'], difficulty: 'expert' },
+    { letters: ['G', 'N', 'A', 'T'], possibleWords: ['GNAT', 'TANG', 'GANT'], difficulty: 'expert' },
     { letters: ['W', 'R', 'I', 'T'], possibleWords: ['WRIT'], difficulty: 'expert' },
-    
-    // Unusual vowel positions
     { letters: ['I', 'O', 'T', 'A'], possibleWords: ['IOTA'], difficulty: 'expert' },
     { letters: ['A', 'U', 'R', 'A'], possibleWords: ['AURA'], difficulty: 'expert' },
     { letters: ['A', 'Q', 'U', 'A'], possibleWords: ['AQUA'], difficulty: 'expert' },
     { letters: ['O', 'L', 'I', 'O'], possibleWords: ['OLIO'], difficulty: 'expert' },
-    { letters: ['O', 'R', 'C', 'A'], possibleWords: ['ORCA'], difficulty: 'expert' },
+    { letters: ['O', 'R', 'C', 'A'], possibleWords: ['ORCA', 'ARCO'], difficulty: 'expert' },
     { letters: ['O', 'K', 'R', 'A'], possibleWords: ['OKRA'], difficulty: 'expert' },
     { letters: ['U', 'N', 'T', 'O'], possibleWords: ['UNTO'], difficulty: 'expert' },
-    { letters: ['A', 'N', 'T', 'E'], possibleWords: ['ANTE'], difficulty: 'expert' },
-    
-    // Words that look like gibberish
+    { letters: ['A', 'N', 'T', 'E'], possibleWords: ['ANTE', 'NEAT'], difficulty: 'expert' },
     { letters: ['G', 'Y', 'R', 'O'], possibleWords: ['GYRO'], difficulty: 'expert' },
-    { letters: ['P', 'Y', 'R', 'O'], possibleWords: ['PYRO'], difficulty: 'expert' },
     { letters: ['G', 'U', 'R', 'U'], possibleWords: ['GURU'], difficulty: 'expert' },
     { letters: ['T', 'U', 'T', 'U'], possibleWords: ['TUTU'], difficulty: 'expert' },
     { letters: ['M', 'U', 'M', 'U'], possibleWords: ['MUMU'], difficulty: 'expert' },
@@ -515,30 +478,20 @@ export const letterSets = {
     { letters: ['T', 'O', 'F', 'U'], possibleWords: ['TOFU'], difficulty: 'expert' },
     { letters: ['S', 'U', 'M', 'O'], possibleWords: ['SUMO'], difficulty: 'expert' },
     { letters: ['J', 'U', 'D', 'O'], possibleWords: ['JUDO'], difficulty: 'expert' },
-    
-    // Archaic/Literary words
     { letters: ['D', 'O', 'T', 'H'], possibleWords: ['DOTH'], difficulty: 'expert' },
     { letters: ['H', 'A', 'T', 'H'], possibleWords: ['HATH'], difficulty: 'expert' },
-    { letters: ['N', 'E', 'A', 'T'], possibleWords: ['NEAT', 'ANTE'], difficulty: 'expert' },
     { letters: ['M', 'I', 'R', 'E'], possibleWords: ['MIRE', 'RIME', 'EMIR'], difficulty: 'expert' },
-    { letters: ['B', 'A', 'N', 'E'], possibleWords: ['BANE', 'BEAN'], difficulty: 'expert' },
+    { letters: ['B', 'A', 'N', 'E'], possibleWords: ['BANE', 'BEAN', 'NABE'], difficulty: 'expert' },
     { letters: ['W', 'A', 'R', 'Y'], possibleWords: ['WARY'], difficulty: 'expert' },
     
-    // Food/cuisine words
-    { letters: ['T', 'A', 'R', 'O'], possibleWords: ['TARO'], difficulty: 'expert' },
+    { letters: ['T', 'A', 'R', 'O'], possibleWords: ['TARO', 'ROTA'], difficulty: 'expert' },
     { letters: ['N', 'A', 'A', 'N'], possibleWords: ['NAAN'], difficulty: 'expert' },
     { letters: ['P', 'I', 'T', 'A'], possibleWords: ['PITA'], difficulty: 'expert' },
-    
-    // Musical/technical terms
     { letters: ['O', 'B', 'O', 'E'], possibleWords: ['OBOE'], difficulty: 'expert' },
     { letters: ['T', 'U', 'B', 'A'], possibleWords: ['TUBA'], difficulty: 'expert' },
-    { letters: ['R', 'A', 'G', 'A'], possibleWords: ['RAGA'], difficulty: 'expert' },
-    
-    // Biological/scientific
+    { letters: ['R', 'A', 'G', 'A'], possibleWords: ['RAGA', 'AGAR'], difficulty: 'expert' },
     { letters: ['C', 'E', 'L', 'L'], possibleWords: ['CELL'], difficulty: 'expert' },
     { letters: ['G', 'E', 'N', 'E'], possibleWords: ['GENE'], difficulty: 'expert' },
-    
-    // Additional rare letter words (Q, X, Z, J)
     { letters: ['Q', 'U', 'A', 'Y'], possibleWords: ['QUAY'], difficulty: 'expert' },
     { letters: ['Q', 'O', 'P', 'H'], possibleWords: ['QOPH'], difficulty: 'expert' },
     { letters: ['O', 'R', 'Y', 'X'], possibleWords: ['ORYX'], difficulty: 'expert' },
@@ -549,8 +502,6 @@ export const letterSets = {
     { letters: ['J', 'I', 'B', 'E'], possibleWords: ['JIBE'], difficulty: 'expert' },
     { letters: ['J', 'O', 'W', 'L'], possibleWords: ['JOWL'], difficulty: 'expert' },
     { letters: ['J', 'A', 'M', 'B'], possibleWords: ['JAMB'], difficulty: 'expert' },
-    
-    // Uncommon but valid words
     { letters: ['P', 'S', 'S', 'T'], possibleWords: ['PSST'], difficulty: 'expert' },
     { letters: ['C', 'Y', 'S', 'T'], possibleWords: ['CYST'], difficulty: 'expert' },
     { letters: ['B', 'Y', 'R', 'E'], possibleWords: ['BYRE'], difficulty: 'expert' },
@@ -564,15 +515,16 @@ export const letterSets = {
     { letters: ['P', 'Y', 'R', 'E'], possibleWords: ['PYRE', 'PREY'], difficulty: 'expert' },
     { letters: ['R', 'U', 'N', 'E'], possibleWords: ['RUNE'], difficulty: 'expert' },
     { letters: ['S', 'H', 'I', 'V'], possibleWords: ['SHIV'], difficulty: 'expert' },
-    { letters: ['S', 'K', 'E', 'W'], possibleWords: ['SKEW'], difficulty: 'expert' },
-    { letters: ['S', 'P', 'R', 'Y'], possibleWords: ['SPRY'], difficulty: 'expert' },
+    { letters: ['S', 'K', 'E', 'W'], possibleWords: ['SKEW', 'EWKS'], difficulty: 'expert' },
+    { letters: ['S', 'P', 'R', 'Y'], possibleWords: ['SPRY', 'PRYS'], difficulty: 'expert' },
     { letters: ['S', 'W', 'A', 'B'], possibleWords: ['SWAB', 'WABS'], difficulty: 'expert' },
     { letters: ['T', 'U', 'F', 'T'], possibleWords: ['TUFT'], difficulty: 'expert' },
     { letters: ['W', 'A', 'F', 'T'], possibleWords: ['WAFT'], difficulty: 'expert' },
     { letters: ['W', 'A', 'I', 'F'], possibleWords: ['WAIF'], difficulty: 'expert' },
     { letters: ['W', 'I', 'S', 'P'], possibleWords: ['WISP'], difficulty: 'expert' },
     { letters: ['Y', 'A', 'W', 'L'], possibleWords: ['YAWL'], difficulty: 'expert' },
-    { letters: ['K', 'N', 'E', 'W'], possibleWords: ['KNEW'], difficulty: 'expert' }
+    { letters: ['K', 'N', 'E', 'W'], possibleWords: ['KNEW'], difficulty: 'expert' },
+    { letters: ['A', 'E', 'M', 'S'], possibleWords: ['MESA', 'SAME', 'SEAM'], difficulty: 'expert' }
   ]
 };
 
@@ -587,14 +539,64 @@ const shuffleArray = (array) => {
 };
 
 // Helper function to get a random letter set based on difficulty
-export const getRandomLetterSet = (difficulty = 'easy') => {
+// usedSets: array of previously used letter set keys (e.g., "STAR")
+// lastSetKey: the key of the most recent set (to prevent consecutive duplicates)
+export const getRandomLetterSet = (difficulty = 'easy', usedSets = [], lastSetKey = null) => {
   const sets = letterSets[difficulty];
   if (!sets || sets.length === 0) {
     const fallback = letterSets.easy[0];
-    return { ...fallback, letters: shuffleArray(fallback.letters) };
+    return { ...fallback, letters: shuffleArray(fallback.letters), setKey: fallback.letters.slice().sort().join('') };
   }
+  
+  // Create a weighted list where used sets are less likely
+  // Each set gets a weight: 1.0 for unused, 0.3 for previously used
+  const USED_PENALTY = 0.3; // Previously used sets have 30% of normal weight
+  
+  const weightedSets = sets.map(set => {
+    const setKey = set.letters.slice().sort().join('');
+    let weight = 1.0;
+    
+    // Apply penalty if this set was used before
+    if (usedSets.includes(setKey)) {
+      weight = USED_PENALTY;
+    }
+    
+    // If this was the last set, exclude it entirely (weight = 0)
+    // This prevents consecutive identical sets (e.g., STAR, STAR)
+    if (lastSetKey && setKey === lastSetKey) {
+      weight = 0;
+    }
+    
+    return { set, weight, setKey };
+  });
+  
+  // Calculate total weight
+  const totalWeight = weightedSets.reduce((sum, item) => sum + item.weight, 0);
+  
+  // If all weights are 0 (edge case), just pick randomly excluding last
+  if (totalWeight === 0) {
+    const availableSets = weightedSets.filter(item => item.setKey !== lastSetKey);
+    if (availableSets.length === 0) {
+      // Extreme edge case: only one set exists
+      const selectedSet = sets[0];
+      return { ...selectedSet, letters: shuffleArray(selectedSet.letters), setKey: selectedSet.letters.slice().sort().join('') };
+    }
+    const selected = availableSets[Math.floor(Math.random() * availableSets.length)];
+    return { ...selected.set, letters: shuffleArray(selected.set.letters), setKey: selected.setKey };
+  }
+  
+  // Weighted random selection
+  let random = Math.random() * totalWeight;
+  for (const item of weightedSets) {
+    random -= item.weight;
+    if (random <= 0) {
+      return { ...item.set, letters: shuffleArray(item.set.letters), setKey: item.setKey };
+    }
+  }
+  
+  // Fallback (shouldn't reach here)
   const selectedSet = sets[Math.floor(Math.random() * sets.length)];
-  return { ...selectedSet, letters: shuffleArray(selectedSet.letters) };
+  return { ...selectedSet, letters: shuffleArray(selectedSet.letters), setKey: selectedSet.letters.slice().sort().join('') };
 };
 
 // Get difficulty using weighted probabilities that scale with score

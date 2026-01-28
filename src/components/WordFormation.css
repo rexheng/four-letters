@@ -35,6 +35,25 @@
     0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.word-circle.clickable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.word-circle.clickable:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.word-circle.pressed {
+  transform: scale(0.9) translateY(4px);
+  box-shadow: 
+    0 2px 0 rgba(217, 106, 74, 0.6),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+  filter: brightness(0.9);
+  transition: all 0.08s ease-out;
+}
+
 @keyframes letterSnap {
   0% {
     transform: scale(0.8);

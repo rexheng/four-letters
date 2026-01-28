@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
-export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd) => {
+export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemove) => {
   const [isDrawing, setIsDrawing] = useState(false);
   const sessionPathRef = useRef([]); // Track letters added during THIS swipe session only
   const lastTouchRef = useRef(null);
@@ -50,16 +50,20 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd) => {
     const touch = e.touches[0];
     lastTouchRef.current = { x: touch.clientX, y: touch.clientY };
     
-    setIsDrawing(true);
-    
-    // Only add this letter if it's not already selected
-    if (!isLetterSelected(letterIndex)) {
-      sessionPathRef.current = [letterIndex];
-      onStart(letterIndex);
-    } else {
+    // Check if this letter is already selected - if so, remove it
+    if (selectedIndices && selectedIndices.includes(letterIndex)) {
+      const positionInWord = selectedIndices.indexOf(letterIndex);
+      if (onRemove && positionInWord !== -1) {
+        onRemove(positionInWord);
+      }
       sessionPathRef.current = [];
+      return; // Don't start drawing when removing
     }
-  }, [onStart, isLetterSelected]);
+    
+    setIsDrawing(true);
+    sessionPathRef.current = [letterIndex];
+    onStart(letterIndex);
+  }, [onStart, onRemove, selectedIndices]);
 
   const handleTouchMove = useCallback((e) => {
     if (!isDrawing) return;
@@ -103,16 +107,21 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd) => {
   // Mouse event handlers (for desktop)
   const handleMouseDown = useCallback((e, letterIndex) => {
     e.preventDefault();
-    setIsDrawing(true);
     
-    // Only add this letter if it's not already selected
-    if (!isLetterSelected(letterIndex)) {
-      sessionPathRef.current = [letterIndex];
-      onStart(letterIndex);
-    } else {
+    // Check if this letter is already selected - if so, remove it
+    if (selectedIndices && selectedIndices.includes(letterIndex)) {
+      const positionInWord = selectedIndices.indexOf(letterIndex);
+      if (onRemove && positionInWord !== -1) {
+        onRemove(positionInWord);
+      }
       sessionPathRef.current = [];
+      return; // Don't start drawing when removing
     }
-  }, [onStart, isLetterSelected]);
+    
+    setIsDrawing(true);
+    sessionPathRef.current = [letterIndex];
+    onStart(letterIndex);
+  }, [onStart, onRemove, selectedIndices]);
 
   const handleMouseEnter = useCallback((letterIndex) => {
     if (!isDrawing) return;

@@ -30,6 +30,7 @@ function App() {
     continueWordFormation,
     endWordFormation,
     removeLastLetter,
+    removeLetterAtIndex,
     clearCurrentWord,
     pauseGame,
     resumeGame,
@@ -41,7 +42,8 @@ function App() {
     selectedIndices,
     startWordFormation,
     continueWordFormation,
-    endWordFormation
+    endWordFormation,
+    removeLetterAtIndex
   );
 
   // Enable keyboard input
@@ -50,7 +52,8 @@ function App() {
     startWordFormation, 
     continueWordFormation, 
     endWordFormation, 
-    removeLastLetter, 
+    removeLastLetter,
+    removeLetterAtIndex,
     clearCurrentWord, 
     gameStatus
   );
@@ -92,7 +95,7 @@ function App() {
 
         <div className="score-message-container" />
 
-        <WordFormation currentWord={currentWord} />
+        <WordFormation currentWord={currentWord} onLetterClick={removeLetterAtIndex} />
 
         <LetterCircle
           letters={currentLetters}
@@ -131,7 +134,7 @@ function App() {
         )}
       </div>
 
-      <WordFormation currentWord={currentWord} />
+      <WordFormation currentWord={currentWord} onLetterClick={removeLetterAtIndex} />
 
       <LetterCircle
         letters={currentLetters}

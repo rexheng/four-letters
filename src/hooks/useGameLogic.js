@@ -25,10 +25,21 @@ export const useGameLogic = () => {
   const timerRef = useRef(null);
   const lastUpdateRef = useRef(Date.now());
   const timerSpeedRef = useRef(1); // Timer speed multiplier
+  const usedSetsRef = useRef([]); // Track which letter sets have been used this game
+  const lastSetKeyRef = useRef(null); // Track the last set to prevent consecutive duplicates
 
   // Start new game
   const startGame = useCallback(() => {
-    const letterSet = getRandomLetterSet('easy');
+    // Reset set tracking for new game
+    usedSetsRef.current = [];
+    lastSetKeyRef.current = null;
+    
+    const letterSet = getRandomLetterSet('easy', [], null);
+    
+    // Track this set
+    usedSetsRef.current.push(letterSet.setKey);
+    lastSetKeyRef.current = letterSet.setKey;
+    
     setCurrentLetters(letterSet.letters);
     setPossibleWords(letterSet.possibleWords);
     setFoundWords([]);
@@ -47,7 +58,14 @@ export const useGameLogic = () => {
   // Generate new letter set - timer carries over with partial refill
   const generateNewLetters = useCallback(() => {
     const currentDifficulty = getDifficultyFromScore(score);
-    const letterSet = getRandomLetterSet(currentDifficulty);
+    const letterSet = getRandomLetterSet(currentDifficulty, usedSetsRef.current, lastSetKeyRef.current);
+    
+    // Track this set
+    if (!usedSetsRef.current.includes(letterSet.setKey)) {
+      usedSetsRef.current.push(letterSet.setKey);
+    }
+    lastSetKeyRef.current = letterSet.setKey;
+    
     setCurrentLetters(letterSet.letters);
     setPossibleWords(letterSet.possibleWords);
     setDifficulty(currentDifficulty);
@@ -99,6 +117,21 @@ export const useGameLogic = () => {
     if (selectedIndices.length > 0) {
       setSelectedIndices(prev => prev.slice(0, -1));
       setCurrentWord(prev => prev.slice(0, -1));
+    }
+  }, [gameStatus, selectedIndices.length]);
+
+  // Remove letter at specific position in current word
+  const removeLetterAtIndex = useCallback((positionIndex) => {
+    if (gameStatus !== 'playing') return;
+    if (positionIndex >= 0 && positionIndex < selectedIndices.length) {
+      setSelectedIndices(prev => {
+        const newIndices = [...prev];
+        newIndices.splice(positionIndex, 1);
+        return newIndices;
+      });
+      setCurrentWord(prev => {
+        return prev.slice(0, positionIndex) + prev.slice(positionIndex + 1);
+      });
     }
   }, [gameStatus, selectedIndices.length]);
 
@@ -259,6 +292,7 @@ export const useGameLogic = () => {
     continueWordFormation,
     endWordFormation,
     removeLastLetter,
+    removeLetterAtIndex,
     clearCurrentWord,
     pauseGame,
     resumeGame,
