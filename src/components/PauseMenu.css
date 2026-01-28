@@ -56,16 +56,17 @@
   align-items: center;
   margin-bottom: 32px;
   padding: 16px 24px;
-  background: rgba(74, 111, 165, 0.1);
+  background: linear-gradient(135deg, rgba(91, 124, 230, 0.15), rgba(74, 99, 217, 0.1));
   border-radius: 12px;
 }
 
 .pause-score-label {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: var(--accent-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 4px;
+  font-weight: 600;
 }
 
 .pause-score-value {
@@ -122,12 +123,15 @@
 .menu-button {
   background: rgba(74, 111, 165, 0.1);
   color: var(--text-secondary);
+  border: none;
+  outline: none;
 }
 
 .menu-button:hover {
   background: rgba(74, 111, 165, 0.2);
   color: var(--text-primary);
   transform: scale(1.02);
+  border: none;
 }
 
 .pause-button:active {

@@ -174,7 +174,7 @@ export const letterSets = {
     { letters: ['A', 'W', 'A', 'Y'], possibleWords: ['AWAY'], difficulty: 'medium' },
     { letters: ['A', 'C', 'I', 'D'], possibleWords: ['ACID'], difficulty: 'medium' },
     { letters: ['I', 'N', 'T', 'O'], possibleWords: ['INTO'], difficulty: 'medium' },
-    { letters: ['I', 'R', 'O', 'N'], possibleWords: ['IRON'], difficulty: 'medium' },
+    { letters: ['I', 'R', 'O', 'N'], possibleWords: ['IRON',"NOIR"], difficulty: 'medium' },
     { letters: ['U', 'N', 'D', 'O'], possibleWords: ['UNDO'], difficulty: 'medium' },
     { letters: ['U', 'P', 'O', 'N'], possibleWords: ['UPON'], difficulty: 'medium' },
     { letters: ['W', 'I', 'D', 'E'], possibleWords: ['WIDE'], difficulty: 'medium' },
@@ -309,6 +309,7 @@ export const letterSets = {
     { letters: ['S', 'O', 'F', 'T'], possibleWords: ['SOFT'], difficulty: 'hard' },
     { letters: ['L', 'O', 'F', 'T'], possibleWords: ['LOFT'], difficulty: 'hard' },
     { letters: ['B', 'O', 'L', 'T'], possibleWords: ['BOLT'], difficulty: 'hard' },
+    { letters: ['C', 'O', 'R', 'N'], possibleWords: ['CORN'], difficulty: 'hard' },
     
     // Double letter words
     { letters: ['T', 'E', 'L', 'L'], possibleWords: ['TELL'], difficulty: 'hard' },
@@ -363,6 +364,7 @@ export const letterSets = {
     { letters: ['J', 'U', 'M', 'P'], possibleWords: ['JUMP'], difficulty: 'hard' },
     
     // Less obvious words with common letters
+    { letters: ['W', 'E', 'I', 'N'], possibleWords: ['WINE'], difficulty: 'hard' },
     { letters: ['G', 'A', 'W', 'K'], possibleWords: ['GAWK'], difficulty: 'hard' },
     { letters: ['H', 'A', 'W', 'K'], possibleWords: ['HAWK'], difficulty: 'hard' },
     { letters: ['Y', 'A', 'W', 'N'], possibleWords: ['YAWN'], difficulty: 'hard' },
@@ -574,32 +576,13 @@ export const letterSets = {
   ]
 };
 
-// Fisher-Yates shuffle algorithm
-const shuffleArray = (array) => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
-
 // Helper function to get a random letter set based on difficulty
 export const getRandomLetterSet = (difficulty = 'easy') => {
   const sets = letterSets[difficulty];
   if (!sets || sets.length === 0) {
-    const fallback = letterSets.easy[0];
-    return {
-      ...fallback,
-      letters: shuffleArray(fallback.letters)
-    };
+    return letterSets.easy[0]; // Fallback
   }
-  const selectedSet = sets[Math.floor(Math.random() * sets.length)];
-  // Shuffle the letters so the solution pattern is randomized
-  return {
-    ...selectedSet,
-    letters: shuffleArray(selectedSet.letters)
-  };
+  return sets[Math.floor(Math.random() * sets.length)];
 };
 
 // Get difficulty using weighted probabilities that scale with score
