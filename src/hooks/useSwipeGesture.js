@@ -5,6 +5,7 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
   const sessionPathRef = useRef([]); // Track letters added during THIS swipe session only
   const lastTouchRef = useRef(null);
   const selectedIndicesRef = useRef(selectedIndices);
+  const touchHandledRef = useRef(false); // Prevent ghost mousedown after touch
   
   // Keep the ref in sync with the prop
   useEffect(() => {
@@ -67,6 +68,9 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
         onRemove(positionInWord);
       }
       sessionPathRef.current = [];
+      // Mark touch as handled to prevent ghost mousedown
+      touchHandledRef.current = true;
+      setTimeout(() => { touchHandledRef.current = false; }, 300);
       return; // Don't start drawing when removing
     }
     
@@ -93,6 +97,10 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
   }, [isDrawing, findLetterAtPoint, onMove, isLetterSelected]);
 
   const handleTouchEnd = useCallback((e) => {
+    // Mark touch as handled to prevent ghost mousedown
+    touchHandledRef.current = true;
+    setTimeout(() => { touchHandledRef.current = false; }, 300);
+    
     if (!isDrawing) return;
     
     e.preventDefault();
@@ -106,6 +114,10 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
 
   // Handle touch cancel (e.g., when a call comes in)
   const handleTouchCancel = useCallback((e) => {
+    // Mark that touch was handled to prevent ghost mousedown
+    touchHandledRef.current = true;
+    setTimeout(() => { touchHandledRef.current = false; }, 300);
+    
     if (!isDrawing) return;
     
     setIsDrawing(false);
@@ -117,6 +129,11 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
   // Mouse event handlers (for desktop)
   const handleMouseDown = useCallback((e, letterIndex) => {
     e.preventDefault();
+    
+    // Skip if this is a ghost mousedown after a touch event
+    if (touchHandledRef.current) {
+      return;
+    }
     
     // Use ref to get fresh selectedIndices value
     const currentSelectedIndices = selectedIndicesRef.current;
