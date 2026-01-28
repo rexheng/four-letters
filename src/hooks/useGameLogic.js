@@ -138,12 +138,12 @@ export const useGameLogic = () => {
       // Calculate score
       let points = 1; // Base point
       
-      // Speed bonus
+      // Speed bonus (replaces base point, caps at 10)
       if (wordTime < SPEED_BONUS_THRESHOLD) {
         const newStreak = Math.min(speedBonusStreak + 1, 10);
-        points += newStreak;
+        points = newStreak; // Speed bonus IS the points (1-10), not added to base
         setSpeedBonusStreak(newStreak);
-        setMessage(`+${points} Speed Bonus x${newStreak}!`);
+        setMessage(`+${points} (x${newStreak})`);
       } else {
         setSpeedBonusStreak(0);
         setMessage(`+${points}`);
