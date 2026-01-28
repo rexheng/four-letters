@@ -1,0 +1,188 @@
+.pause-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pause-menu {
+  background: var(--background);
+  border-radius: 24px;
+  padding: 40px;
+  min-width: 280px;
+  text-align: center;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pause-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 24px 0;
+  letter-spacing: 3px;
+}
+
+.pause-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 16px 24px;
+  background: rgba(74, 111, 165, 0.1);
+  border-radius: 12px;
+}
+
+.pause-score-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.pause-score-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.pause-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pause-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-icon {
+  font-size: 18px;
+}
+
+.resume-button {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.resume-button:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.02);
+}
+
+.restart-button {
+  background: rgba(74, 111, 165, 0.15);
+  color: var(--text-primary);
+}
+
+.restart-button:hover {
+  background: rgba(74, 111, 165, 0.25);
+  transform: scale(1.02);
+}
+
+.menu-button {
+  background: rgba(74, 111, 165, 0.1);
+  color: var(--text-secondary);
+}
+
+.menu-button:hover {
+  background: rgba(74, 111, 165, 0.2);
+  color: var(--text-primary);
+  transform: scale(1.02);
+}
+
+.pause-button:active {
+  transform: scale(0.98);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 380px) {
+  .pause-menu {
+    padding: 30px 25px;
+    min-width: 250px;
+    margin: 0 15px;
+  }
+  
+  .pause-title {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+  
+  .pause-score {
+    margin-bottom: 24px;
+    padding: 12px 18px;
+  }
+  
+  .pause-score-value {
+    font-size: 30px;
+  }
+  
+  .pause-button {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-height: 600px) {
+  .pause-menu {
+    padding: 25px 20px;
+  }
+  
+  .pause-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .pause-score {
+    margin-bottom: 20px;
+    padding: 10px 16px;
+  }
+  
+  .pause-score-value {
+    font-size: 28px;
+  }
+  
+  .pause-button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}

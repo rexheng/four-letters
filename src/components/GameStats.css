@@ -1,0 +1,81 @@
+.game-stats {
+  text-align: center;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.possible-words-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.found-words-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.found-word {
+  background: var(--word-valid);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  animation: wordAppear 0.3s ease-out;
+}
+
+@keyframes wordAppear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 380px) {
+  .game-stats {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+  
+  .possible-words-count {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+  
+  .found-word {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 600px) {
+  .game-stats {
+    margin-top: 15px;
+  }
+  
+  .possible-words-count {
+    margin-bottom: 10px;
+  }
+  
+  .found-words-list {
+    gap: 6px;
+  }
+  
+  .found-word {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
