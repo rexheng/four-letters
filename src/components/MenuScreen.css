@@ -507,9 +507,9 @@
 }
 
 .demo-letter-top.tap-mode { animation-delay: 0.2s; }
-.demo-letter-right.tap-mode { animation-delay: 1.2s; }
+.demo-letter-right.tap-mode { animation-delay: 1.2s; animation-name: tapLetterPulseY; }
 .demo-letter-bottom.tap-mode { animation-delay: 2.2s; }
-.demo-letter-left.tap-mode { animation-delay: 3.2s; }
+.demo-letter-left.tap-mode { animation-delay: 3.2s; animation-name: tapLetterPulseY; }
 
 @keyframes tapLetterPulse {
   0%, 5% { 
@@ -520,6 +520,18 @@
   }
   15%, 100% { 
     transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes tapLetterPulseY {
+  0%, 5% { 
+    transform: translateY(-50%) scale(1);
+  }
+  10% { 
+    transform: translateY(-50%) scale(0.9);
+  }
+  15%, 100% { 
+    transform: translateY(-50%) scale(1);
   }
 }
 

@@ -17,12 +17,12 @@
 
 .letter-button {
   position: absolute;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: linear-gradient(135deg, #5B7CE6 0%, #4A63D9 100%);
   border: none;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: bold;
   color: white;
   cursor: pointer;
@@ -69,9 +69,9 @@
   }
   
   .letter-button {
-    width: 56px;
-    height: 56px;
-    font-size: 26px;
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
   }
 }
 
@@ -82,9 +82,9 @@
   }
   
   .letter-button {
-    width: 48px;
-    height: 48px;
-    font-size: 22px;
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
   }
 }
 
@@ -95,8 +95,8 @@
   }
   
   .letter-button {
-    width: 52px;
-    height: 52px;
-    font-size: 24px;
+    width: 58px;
+    height: 58px;
+    font-size: 26px;
   }
 }
