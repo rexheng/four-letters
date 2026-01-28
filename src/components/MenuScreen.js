@@ -110,11 +110,9 @@ const MenuScreen = ({ highScore, onStartGame }) => {
           
           <div className="tutorial-tips">
             <div className="tip">
-              <span className="tip-icon">⚡</span>
-              <span>Fast words = bonus points</span>
+              <span>Answer quickly for bonus points</span>
             </div>
             <div className="tip">
-              <span className="tip-icon">⏱️</span>
               <span>Each word refills your timer</span>
             </div>
           </div>
