@@ -31,7 +31,7 @@ export const letterSets = {
     { letters: ['E', 'V', 'I', 'L'], possibleWords: ['EVIL', 'VILE', 'LIVE', 'VEIL'], difficulty: 'easy' },
     { letters: ['R', 'O', 'S', 'E'], possibleWords: ['ROSE', 'ORES', 'SORE', 'ROES', 'EROS'], difficulty: 'easy' },
     { letters: ['T', 'I', 'D', 'E'], possibleWords: ['TIDE', 'TIED', 'DIET', 'EDIT'], difficulty: 'easy' },
-    { letters: ['T', 'H', 'I', 'S'], possibleWords: ['THIS', 'HITS', 'HIST'], difficulty: 'easy' },
+    { letters: ['T', 'H', 'I', 'S'], possibleWords: ['THIS', 'HITS', 'HIST','SHIT'], difficulty: 'easy' },
     { letters: ['T', 'H', 'U', 'S'], possibleWords: ['THUS', 'SHUT', 'HUTS', 'TUSH'], difficulty: 'easy' },
     { letters: ['C', 'A', 'R', 'E'], possibleWords: ['CARE', 'RACE', 'ACRE'], difficulty: 'easy' },
     { letters: ['T', 'E', 'A', 'R'], possibleWords: ['TEAR', 'RATE', 'TARE'], difficulty: 'easy' },
