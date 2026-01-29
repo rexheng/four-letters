@@ -21,6 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
+  background: #E8E0D5;
 }
 
 #root {
@@ -28,6 +29,7 @@ body {
   width: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  background: #E8E0D5;
 }
 
 code {

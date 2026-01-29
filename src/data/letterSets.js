@@ -468,7 +468,6 @@ export const letterSets = {
     { letters: ['O', 'K', 'R', 'A'], possibleWords: ['OKRA'], difficulty: 'expert' },
     { letters: ['U', 'N', 'T', 'O'], possibleWords: ['UNTO'], difficulty: 'expert' },
     { letters: ['A', 'N', 'T', 'E'], possibleWords: ['ANTE', 'NEAT'], difficulty: 'expert' },
-    { letters: ['G', 'Y', 'R', 'O'], possibleWords: ['GYRO'], difficulty: 'expert' },
     { letters: ['G', 'U', 'R', 'U'], possibleWords: ['GURU'], difficulty: 'expert' },
     { letters: ['T', 'U', 'T', 'U'], possibleWords: ['TUTU'], difficulty: 'expert' },
     { letters: ['M', 'U', 'M', 'U'], possibleWords: ['MUMU'], difficulty: 'expert' },

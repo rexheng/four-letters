@@ -3,15 +3,10 @@
    Warm beige aesthetic matching the main app
    ============================================ */
 
-/* Screen Container - breaks out of parent .App padding */
+/* Screen Container */
 .dictionary-screen {
   min-height: 100vh;
   min-height: 100dvh;
-  width: 100vw;
-  margin-left: -20px;
-  margin-right: -20px;
-  margin-top: -20px;
-  align-self: stretch;
   background: var(--bg-primary, #E8E0D5);
   padding: 1rem;
   display: flex;
@@ -670,9 +665,10 @@
 
 /* ===== DESKTOP / LAPTOP LAYOUT ===== */
 
-/* Desktop view spans full width */
+/* Desktop view uses full width with sidebar */
 .dictionary-screen.desktop-view {
-  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 1.5rem 2rem;
 }
 
@@ -745,25 +741,25 @@
   cursor: default;
 }
 
-/* Desktop Word Grid - more columns, properly sized */
+/* Desktop Word Grid - more columns */
 .dictionary-screen.desktop-view .word-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 110px));
-  justify-content: center;
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.25rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   overflow-y: auto;
   align-content: start;
 }
 
-/* Desktop word buttons - fill grid cells */
+/* Desktop word buttons - larger */
 .dictionary-screen.desktop-view .word-button {
-  width: 100%;
+  max-width: 120px;
+  margin: 0 auto;
 }
 
 .dictionary-screen.desktop-view .word-button .word-text {
-  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  font-size: 0.9rem;
 }
 
 /* Desktop pagination - centered and wider */
@@ -775,15 +771,23 @@
 /* Large screens / Desktop */
 @media (min-width: 1024px) {
   .dictionary-screen.desktop-view .word-grid {
-    grid-template-columns: repeat(auto-fill, minmax(95px, 115px));
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
 /* Extra large screens */
 @media (min-width: 1440px) {
+  .dictionary-screen.desktop-view {
+    max-width: 1600px;
+  }
+  
   .dictionary-screen.desktop-view .word-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 125px));
+    grid-template-columns: repeat(7, 1fr);
     gap: 1.5rem;
+  }
+  
+  .dictionary-screen.desktop-view .word-button {
+    max-width: 130px;
   }
   
   .sidebar-letter {
@@ -796,8 +800,12 @@
 /* Medium desktop / Tablet landscape */
 @media (min-width: 768px) and (max-width: 1023px) {
   .dictionary-screen.desktop-view .word-grid {
-    grid-template-columns: repeat(auto-fill, minmax(85px, 105px));
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
+  }
+  
+  .dictionary-screen.desktop-view .word-button {
+    max-width: 100px;
   }
   
   .sidebar-letter {
@@ -863,9 +871,6 @@
     min-height: 100dvh;
     max-height: 100vh;
     max-height: 100dvh;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -10px;
     padding: 0.75rem;
     overflow: hidden;
   }
@@ -916,7 +921,6 @@
     padding: 0.5rem 0;
     overflow: hidden;
     align-content: start;
-    grid-template-columns: repeat(3, minmax(70px, 100px));
   }
   
   .word-button {
@@ -981,7 +985,6 @@
   
   .word-grid {
     gap: 0.4rem;
-    grid-template-columns: repeat(3, minmax(60px, 90px));
   }
   
   .word-button {
