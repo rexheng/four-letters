@@ -334,8 +334,6 @@ export const letterSets = {
     { letters: ['G', 'L', 'U', 'E'], possibleWords: ['GLUE'], difficulty: 'hard' },
     { letters: ['T', 'U', 'B', 'E'], possibleWords: ['TUBE', 'BUTE'], difficulty: 'hard' },
     { letters: ['C', 'U', 'B', 'E'], possibleWords: ['CUBE'], difficulty: 'hard' },
-    { letters: ['F', 'U', 'S', 'E'], possibleWords: ['FUSE'], difficulty: 'hard' },
-    { letters: ['S', 'I', 'N', 'K'], possibleWords: ['SINK', 'INKS', 'KINS'], difficulty: 'hard' },
     { letters: ['B', 'U', 'S', 'T'], possibleWords: ['BUST', 'BUTS', 'TUBS', 'STUB'], difficulty: 'hard' },
     { letters: ['G', 'U', 'S', 'T'], possibleWords: ['GUST', 'GUTS', 'TUGS'], difficulty: 'hard' },
     { letters: ['J', 'U', 'S', 'T'], possibleWords: ['JUST', 'JUTS'], difficulty: 'hard' },

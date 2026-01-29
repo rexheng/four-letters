@@ -36,8 +36,9 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
   }, []);
 
   // Find which letter element is at the given coordinates
+  // Uses proximity-based detection for more generous touch recognition
   const findLetterAtPoint = useCallback((x, y) => {
-    // Use elementsFromPoint for better touch detection on overlapping elements
+    // First, try direct hit detection
     const elements = document.elementsFromPoint(x, y);
     for (const element of elements) {
       if (element && element.classList.contains('letter-button')) {
@@ -47,7 +48,35 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
         }
       }
     }
-    return null;
+    
+    // If no direct hit, use proximity-based detection
+    // Find all letter buttons and check if touch is within expanded hit radius
+    const letterButtons = document.querySelectorAll('.letter-button');
+    const HIT_RADIUS_MULTIPLIER = 1.4; // 40% larger hit area than visual button
+    
+    let closestIndex = null;
+    let closestDistance = Infinity;
+    
+    for (const button of letterButtons) {
+      const rect = button.getBoundingClientRect();
+      const buttonCenterX = rect.left + rect.width / 2;
+      const buttonCenterY = rect.top + rect.height / 2;
+      const buttonRadius = Math.max(rect.width, rect.height) / 2;
+      const expandedRadius = buttonRadius * HIT_RADIUS_MULTIPLIER;
+      
+      // Calculate distance from touch point to button center
+      const distance = Math.sqrt(
+        Math.pow(x - buttonCenterX, 2) + Math.pow(y - buttonCenterY, 2)
+      );
+      
+      // Check if within expanded hit area and closer than any previous match
+      if (distance <= expandedRadius && distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = parseInt(button.dataset.index, 10);
+      }
+    }
+    
+    return closestIndex;
   }, []);
 
   // Touch event handlers

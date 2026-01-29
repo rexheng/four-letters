@@ -37,6 +37,20 @@
   touch-action: none;
 }
 
+/* Invisible expanded touch target for easier tapping */
+.letter-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  /* Transparent but still captures touch events */
+  background: transparent;
+}
+
 .letter-button:hover {
   box-shadow: 
     0 8px 0 rgba(74, 99, 217, 0.6),
