@@ -118,12 +118,25 @@ export const useSwipeGesture = (selectedIndices, onStart, onMove, onEnd, onRemov
     lastTouchRef.current = { x: touch.clientX, y: touch.clientY };
     
     const letterIndex = findLetterAtPoint(touch.clientX, touch.clientY);
+    const currentSelectedIndices = selectedIndicesRef.current;
 
     if (letterIndex !== null && !isLetterSelected(letterIndex)) {
+      // Add new unselected letter to the word
       sessionPathRef.current.push(letterIndex);
       onMove(letterIndex);
+    } else if (
+      letterIndex !== null && 
+      currentSelectedIndices && 
+      currentSelectedIndices.includes(letterIndex) &&
+      !sessionPathRef.current.includes(letterIndex) // Protect letters added in this swipe session
+    ) {
+      // Swipe over a previously-selected letter (from earlier swipe) → unselect it
+      const positionInWord = currentSelectedIndices.indexOf(letterIndex);
+      if (onRemove && positionInWord !== -1) {
+        onRemove(positionInWord);
+      }
     }
-  }, [isDrawing, findLetterAtPoint, onMove, isLetterSelected]);
+  }, [isDrawing, findLetterAtPoint, onMove, onRemove, isLetterSelected]);
 
   const handleTouchEnd = useCallback((e) => {
     // Mark touch as handled to prevent ghost mousedown
