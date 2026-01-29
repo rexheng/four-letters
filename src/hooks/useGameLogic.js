@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { getRandomLetterSet, getDifficultyFromScore } from '../data/letterSets';
-import { getHighScore, setHighScore, getStatistics, setStatistics, addToDictionary } from '../utils/storage';
+import { getHighScore, setHighScore, getStatistics, setStatistics } from '../utils/storage';
+import { unlockWord } from '../utils/dictionaryStorage';
 
 const INITIAL_TIME = 10000; // 10 seconds in milliseconds
 const SPEED_BONUS_THRESHOLD = 1000; // 1 second for speed bonus
@@ -186,7 +187,7 @@ export const useGameLogic = () => {
       const newScore = score + points;
       setScore(newScore);
       setFoundWords(prev => [...prev, word]);
-      addToDictionary(word);
+      unlockWord(word); // Unlock word in dictionary
       
       // Check if high score
       const highScore = getHighScore();

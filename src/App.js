@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { useGameLogic } from './hooks/useGameLogic';
 import { useSwipeGesture } from './hooks/useSwipeGesture';
 import { useKeyboardInput } from './hooks/useKeyboardInput';
@@ -10,10 +10,13 @@ import GameStats from './components/GameStats';
 import ResultsScreen from './components/ResultsScreen';
 import MenuScreen from './components/MenuScreen';
 import PauseMenu from './components/PauseMenu';
+import DictionaryScreen from './components/DictionaryScreen';
 
 const INITIAL_TIME = 10000; // 10 seconds
 
 function App() {
+  const [showDictionary, setShowDictionary] = useState(false);
+  
   const {
     gameStatus,
     currentLetters,
@@ -64,9 +67,20 @@ function App() {
     }
   };
 
+  // Dictionary screen
+  if (showDictionary) {
+    return <DictionaryScreen onBack={() => setShowDictionary(false)} />;
+  }
+
   // Menu screen
   if (gameStatus === 'menu') {
-    return <MenuScreen highScore={highScore} onStartGame={startGame} />;
+    return (
+      <MenuScreen 
+        highScore={highScore} 
+        onStartGame={startGame} 
+        onOpenDictionary={() => setShowDictionary(true)}
+      />
+    );
   }
 
   // Results screen

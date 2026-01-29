@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { getUnlockedCount } from '../utils/dictionaryStorage';
+import { getTotalWordCount } from '../data/dictionaryData';
 import './MenuScreen.css';
 
-const MenuScreen = ({ highScore, onStartGame }) => {
+const MenuScreen = ({ highScore, onStartGame, onOpenDictionary }) => {
   const [demoMode, setDemoMode] = useState(0); // 0: swipe, 1: type, 2: tap
   const modeLabels = ['Swipe', 'Type', 'Tap'];
+  
+  // Get dictionary progress
+  const unlockedCount = getUnlockedCount();
+  const totalWords = getTotalWordCount();
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,12 +32,26 @@ const MenuScreen = ({ highScore, onStartGame }) => {
           <div className="logo-subtitle">LETTERS</div>
         </div>
         
-        {highScore > 0 && (
-          <div className="high-score-display">
-            <div className="high-score-label">HIGH SCORE</div>
-            <div className="high-score-value">{highScore}</div>
-          </div>
-        )}
+        {/* Stats Row: High Score + Dictionary */}
+        <div className="stats-row">
+          {highScore > 0 && (
+            <div className="high-score-display">
+              <div className="high-score-value">{highScore}</div>
+              <div className="high-score-label">HIGH SCORE</div>
+            </div>
+          )}
+          
+          {/* Dictionary Button */}
+          <button className="dictionary-button" onClick={onOpenDictionary} aria-label="Dictionary">
+            <svg className="dict-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              <line x1="8" y1="6" x2="16" y2="6"></line>
+              <line x1="8" y1="10" x2="14" y2="10"></line>
+            </svg>
+            <span className="dict-progress">{unlockedCount}/{totalWords}</span>
+          </button>
+        </div>
         
         <button className="start-button" onClick={onStartGame}>
           START GAME
