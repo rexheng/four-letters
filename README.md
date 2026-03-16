@@ -1,89 +1,70 @@
-# Four Letters - Word Game
+# Four Letters
 
-A fast-paced React word puzzle game where players form 4-letter words by swiping through letters before time runs out.
+Fast-paced word puzzle game. Swipe or type through 4 letters to form valid words before the timer runs out.
 
-## Features
+**Play:** [four-letters.vercel.app](https://four-letters.vercel.app)
 
-- **Swipe/Click Gameplay**: Form words by swiping or clicking through letter buttons
-- **Keyboard Support**: Type letters on desktop for instant word formation
-- **Timer System**: 10-second countdown with visual progress ring
-- **Speed Bonuses**: Chain quick words for bonus points (up to 10x multiplier)
-- **Weighted Difficulty**: Probability-based difficulty scaling from easy to expert
-- **Pause Menu**: Pause, resume, restart, or return to menu mid-game
-- **Local Storage**: Persists high scores, statistics, and word dictionary
-- **PWA Ready**: Installable as a mobile app
+## Gameplay
 
-## How to Play
-
-1. Swipe or click through the 4 letters to form valid words
-2. On desktop, type letters on your keyboard for quick input
-3. Form words in under 1 second for speed bonuses
-4. Each valid word advances you to a new letter set
-5. Keep playing until the timer runs out
+- Each round gives you 4 letters and a 10-second timer
+- Swipe (mobile) or type (desktop) the letters to form a valid English word
+- Form words in under 1 second to build a speed bonus streak (up to 10x)
+- The timer refills on each valid word — keep chaining to survive
+- Difficulty scales as your score increases
 
 ## Controls
 
-- **Mouse/Touch**: Click or swipe through letters
-- **Keyboard**: 
-  - Type letters to select them
-  - `Backspace` to remove the last letter
-  - `Ctrl+Backspace` to clear all letters
-- **Menu Button (☰)**: Pause the game
+| Input | Action |
+|-------|--------|
+| Swipe / click | Select letters in order |
+| Keyboard | Type letters directly |
+| Backspace | Remove last letter |
+| Ctrl+Backspace | Clear all letters |
+| Menu (☰) | Pause |
 
 ## Getting Started
 
 ```bash
+git clone https://github.com/rexheng/four-letters.git
+cd four-letters
 npm install
 npm start
 ```
 
-Runs the app in development mode at [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000).
 
-```bash
-npm run build
-```
+## Scoring
 
-Builds the app for production to the `build` folder
-
-## Game Mechanics
-
-- **Base Score**: 1 point per valid word
-- **Speed Bonus**: +1 to +10 points for words formed under 1 second (incremental streak)
-- **Timer**: 10 seconds per letter set, refills on valid words
-- **Difficulty**: Weighted probability scaling based on score
-  - Low scores favor easy words with multiple anagrams
-  - Higher scores increase chance of harder words with fewer solutions
+- 1 point per valid word
+- Speed bonus: +1 to +10 for words formed under 1 second (streak-based)
+- High scores and stats persist via localStorage
 
 ## Project Structure
 
 ```
 src/
-├── components/
-│   ├── GameHeader       # Score and pause button
-│   ├── WordFormation    # Visual word builder
-│   ├── LetterCircle     # Letter buttons with timer ring
-│   ├── GameStats        # Possible words counter
-│   ├── ResultsScreen    # Game over screen
-│   ├── MenuScreen       # Start menu
-│   └── PauseMenu        # In-game pause overlay
-├── hooks/
-│   ├── useGameLogic     # Core game state and logic
-│   ├── useSwipeGesture  # Touch/mouse gesture handling
-│   └── useKeyboardInput # Keyboard input handling
-├── utils/
-│   └── storage          # LocalStorage management
-└── data/
-    └── letterSets       # Pre-generated word puzzles (280+ sets)
+  components/
+    GameHeader       Score and pause button
+    WordFormation    Visual word builder
+    LetterCircle     Letter buttons with timer ring
+    GameStats        Possible words counter
+    ResultsScreen    Game over screen
+    MenuScreen       Start menu
+    PauseMenu        In-game pause overlay
+  hooks/
+    useGameLogic     Core game state and logic
+    useSwipeGesture  Touch/mouse gesture handling
+    useKeyboardInput Keyboard input handling
+  utils/
+    storage          LocalStorage management
+  data/
+    letterSets       Pre-generated word puzzles (280+ sets)
 ```
 
-## Technologies
+## Stack
 
-- React 19.2
-- React Hooks for state management
-- CSS3 animations and gradients
-- LocalStorage API
-- SVG for timer ring
+React 19.2, CSS3, LocalStorage API, SVG. PWA-ready.
 
-## License
+## Licence
 
 MIT
